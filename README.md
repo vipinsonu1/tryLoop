@@ -17,19 +17,19 @@ Navigate to the Project Directory: Use the cd command to change your current dir
 
 ```cd Tryloop/tryLoop```
 
-Install Dependencies: Run npm install to install the necessary dependencies for the project. This command will read the package.json file and install all required packages:
+Install Dependencies:  Run npm install to install the necessary dependencies for the project. This command will read the package.json file and install all required packages:
 
 
 ```npm i```
 
-Install Playwright: Playwright can be installed as a development dependency using npm. Run the following command to install Playwright:
+Install Playwright:  Playwright can be installed as a development dependency using npm. Run the following command to install Playwright:
 
 
 ```npm install playwright --save-dev```
 
 This command will install Playwright and add it to the list of development dependencies in your package.json file.
-Set Up Tests: If you're setting up tests, create test files in the appropriate directory (e.g., tests or __tests__). Write your test scripts using Playwright to automate interactions with your web application.
-Run Tests: Depending on your testing framework, you can run your tests using the appropriate command. For example, if you're using Jest, you can run tests using:
+Set Up Tests:  If you're setting up tests, create test files in the appropriate directory (e.g., tests or __tests__). Write your test scripts using Playwright to automate interactions with your web application.
+Run Tests:  Depending on your testing framework, you can run your tests using the appropriate command.
 
 ```npx playwright test -g "tryloopDataVerification.spec.js" --headed```
 
