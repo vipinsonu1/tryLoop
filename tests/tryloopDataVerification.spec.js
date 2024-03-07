@@ -5,7 +5,7 @@ import Transaction from "../pages/transactionspage.js";
 import { readFileSync } from 'fs'
 const fs = require('fs');
 
-test.describe("Create category and article", () => {
+test.describe("Verified grand total transction section and bonus point ", () => {
   let page;
   test.beforeAll(async ({ browser }) => {
       page = await browser.newPage();
@@ -29,9 +29,9 @@ test("Verified transction section", async () => {
     await tranPage.selectPerPage();
     const table = await page.locator("//table[contains(@class,'MuiTable-root')]");
     const collum = await table.locator("thead tr th");
-    console.log("Collum :  ", await collum.count());
+    //console.log("Collum :  ", await collum.count());
     const rows = await table.locator("tbody tr");
-    console.log("Rows are :  ", await rows.count());
+    //console.log("Rows are :  ", await rows.count());
    
     await page.waitForSelector("//div//span[contains(@class,'MuiChip-label MuiChip-labelSmall')]");
 

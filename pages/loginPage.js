@@ -36,9 +36,9 @@ class LoginPage {
   async webtable() {
     const table = await this.table;
     const column = await table.locator("thead tr th");
-    console.log("Column ", await column.count());
+    //console.log("Column ", await column.count());
     let rows = table.locator("tbody tr");
-    console.log("rows in table ", await rows.count());
+    //console.log("rows in table ", await rows.count());
 
     for (let i = 2; i < (await column.count()) - 1; i++) {
       await this.page.reload();
@@ -61,9 +61,8 @@ class LoginPage {
           let text = await this.page
             .locator(`tbody tr:nth-child(${j}) td:nth-child(${i}) h6`)
             .textContent();
-          //console.log("value of  : ", +j + " and value of i:  ", i);
           let a = parseFloat(text.split("$")[1]);
-          console.log("value is :  ", a);
+          //console.log("value is :  ", a);
           b = b + a;
         }
         await this.page.waitForTimeout(2000);
@@ -71,9 +70,8 @@ class LoginPage {
         isNextPageEnabled = await nextPageButton.isEnabled();
         if (isNextPageEnabled) {
           await nextPageButton.click();
-          await this.page.waitForTimeout(3000); // Adjust wait time as needed
+          await this.page.waitForTimeout(3000); 
         }
-        //console.log(`Gross Sum: ${parseFloat(b.toFixed(2))} for column: ${i}`);
       } while (isNextPageEnabled);
       let GrossTotal = parseFloat(b.toFixed(2));
       console.log(`Gross Sum: ${GrossTotal} for Column: ${i}`);
