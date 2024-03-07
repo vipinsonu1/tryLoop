@@ -13,13 +13,14 @@ class Transaction {
     this.grubhubLocator=page.locator("//div//p[text()='Grubhub']");
     this.rowPerPage= page.locator("(//div[contains(@class,'MuiSelect-select')])");
     this.selectrows= page.locator("li[data-value='20']");
+    this.getstutusLocator=page.locator("//div//span[contains(@class,'MuiChip-label MuiChip-labelSmall')]");
 
   }
   async gotoTransationUrl() {
     await this.page.goto(URL_DETAILS.TRANSACTION_URL);
   }
 async applyLocationFilter(){
-    await this.locationLocator.click();
+    await this.locationLocator.first().click();
     await this.clearLocattor.click();
     await this.selectArtisanLocator.click();
     await this.selectBlissfulLocator.click();
@@ -35,5 +36,6 @@ async selectPerPage(){
     await this.rowPerPage.click();
     await this.selectrows.click();
 }
+
 }
 export default Transaction;

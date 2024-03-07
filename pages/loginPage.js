@@ -11,7 +11,7 @@ class LoginPage {
     this.table = page.locator("table.MuiTable-root");
   }
   async gotoUrl() {
-    await this.page.goto(URL_DETAILS.LOGIN_URL);
+    await this.page.goto("https://app.tryloop.ai/login/password");
     await expect
       .soft(
         this.page.locator(
@@ -26,11 +26,12 @@ class LoginPage {
     await this.email.fill(email);
     await this.password.fill(pass);
     await this.page.getByTestId("login-button").click();
+   
   }
   async gotoChargeBack() {
-    await this.page.goto(URL_DETAILS.CHARGEBACKS_URL);
-    await this.page.waitForTimeout(20000);
+    await this.page.goto("https://app.tryloop.ai/chargebacks/stores/view");
     await this.page.waitForSelector("table");
+    await this.page.waitForTimeout(20000);
   }
   async webtable() {
     const table = await this.table;
@@ -57,7 +58,7 @@ class LoginPage {
       let isNextPageEnabled = true;
       do {
         for (let j = 1; j < (await rows.count()) - 1; j++) {
-          let text = await page
+          let text = await this.page
             .locator(`tbody tr:nth-child(${j}) td:nth-child(${i}) h6`)
             .textContent();
           //console.log("value of  : ", +j + " and value of i:  ", i);
@@ -81,13 +82,6 @@ class LoginPage {
       let GrandTotal;
       switch (i) {
         case 2:
-          console.log(
-            await this.spage
-              .locator(
-                `(//tr[contains(@class,'MuiTableRow-root')])[11]//td[${i}]//h6`
-              )
-              .textContent()
-          );
           total = await this.page
             .locator(
               `(//tr[contains(@class,'MuiTableRow-root')])[11]//td[${i}]//h6`
