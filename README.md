@@ -31,10 +31,12 @@ Run Tests: Depending on your testing framework, you can run your tests using the
 
 ```npx playwright test -g "tryloopDataVerification.spec.js" --headed```
 
-*Test case Output*
+*Test case 1 Output*
 
 <img width="1091" alt="Screenshot 2024-03-07 at 9 54 47 PM" src="https://github.com/vipinsonu1/tryLoop/assets/7632569/125fce45-e5a1-417a-a74a-ffe94713edd0">
 
+*report summary* <br/>
 
+<img width="1118" alt="Screenshot 2024-03-08 at 3 00 54 AM" src="https://github.com/vipinsonu1/tryLoop/assets/7632569/7c0a253d-b7c0-4164-8811-5ebe56b74f96">
 
 
