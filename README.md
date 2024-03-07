@@ -1,9 +1,9 @@
 **Prerequisites:-** <br>
-- Node server should install.
-  Node Version: v14.16.0
+- Node server should install.  <br>
+  Node Version: ```v14.16.0```
 - Vscode should Install 
-- Playwright should install.
-  PlayWright Version: 1.42.1
+- Playwright should install.  <br>
+  PlayWright Version: ```1.42.1```
  
 **Steps for running the program** <br>
 Clone the Repository: Clone the repository to your local machine using Git. Open a terminal and execute the following command:
