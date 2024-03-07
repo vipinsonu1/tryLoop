@@ -23,7 +23,7 @@ test("test varification", async ({ page }) => {
   
     for (let i = 2; i < (await column.count()) - 1; i++) {
       await page.reload();
-      await page.waitForTimeout(4000);
+      await page.waitForTimeout(5000); 
       await page.locator("(//div[contains(@class,'MuiSelect-select')])[2]").click();
       await page.waitForSelector(`th:nth-child(${i}) h6`);
       await page.locator("li[data-value='50']").click();
